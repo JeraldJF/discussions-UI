@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { CsModule } from '@project-sunbird/client-services';
+import { CsModule } from '@jeraldj/client-services';
 
 @Component({
   selector: 'app-root',
@@ -53,10 +53,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  changeMode(){
-      this.dataThemeAttribute = document.documentElement.getAttribute('data-theme');
-      this.dataThemeAttribute = this.dataThemeAttribute === 'Default' ? 'Darkmode' : 'Default';
-      document.documentElement.setAttribute('data-theme', this.dataThemeAttribute);
+  changeMode() {
+    this.dataThemeAttribute = document.documentElement.getAttribute('data-theme');
+    this.dataThemeAttribute = this.dataThemeAttribute === 'Default' ? 'Darkmode' : 'Default';
+    document.documentElement.setAttribute('data-theme', this.dataThemeAttribute);
   }
 
   changeLayout() {
@@ -75,19 +75,19 @@ export class AppComponent implements OnInit {
     });
   }
 
-  DefaultTheme(){
+  DefaultTheme() {
     this.dataThemeAttribute = document.documentElement.getAttribute('data-theme');
     this.dataThemeAttribute = this.dataThemeAttribute === 'Default' ? 'Default' : 'Default';
     document.documentElement.setAttribute('data-theme', this.dataThemeAttribute);
   }
 
-  GreenTheme(){
+  GreenTheme() {
     this.dataThemeAttribute = document.documentElement.getAttribute('data-theme');
     this.dataThemeAttribute = this.dataThemeAttribute === 'Green' ? 'Green' : 'Green';
     document.documentElement.setAttribute('data-theme', this.dataThemeAttribute);
   }
 
-  OrangeTheme(){
+  OrangeTheme() {
     this.dataThemeAttribute = document.documentElement.getAttribute('data-theme');
     this.dataThemeAttribute = this.dataThemeAttribute === 'Orange' ? 'Orange' : 'Orange';
     document.documentElement.setAttribute('data-theme', this.dataThemeAttribute);

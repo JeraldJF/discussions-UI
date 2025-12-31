@@ -7,8 +7,8 @@ import { NSDiscussData } from '../models/discuss.model';
 
 /* tslint:disable */
 import * as _ from 'lodash'
-import { CsDiscussionService } from '@project-sunbird/client-services/services/discussion';
-import { CsModule } from '@project-sunbird/client-services';
+import { CsDiscussionService } from '@jeraldj/client-services/services/discussion';
+import { CsModule } from '@jeraldj/client-services';
 /* tslint:enable */
 
 export const CONTEXT_PROPS = {
@@ -234,14 +234,14 @@ export class DiscussionService {
     return this.http.post(urlConfig.registerUser(), data);
   }
 
-  createForum(data){
+  createForum(data) {
     return this.csDiscussionService.createForum(data)
   }
 
-  getForumIds(data){
+  getForumIds(data) {
     return this.csDiscussionService.getForumIds(data).toPromise()
   }
-  
+
   set userDetails(userDetails) {
     this._userDetails = userDetails;
   }
@@ -297,10 +297,10 @@ export class DiscussionService {
   /** To check the error code and show alert message
    *  if it is 502 - error 
    */
-   showTrafficAlert(errorObject) {
+  showTrafficAlert(errorObject) {
     const errorCode = _.get(errorObject, 'response.responseCode')
-    if(errorCode) {
-      if([502, '502'].includes(errorCode)) {
+    if (errorCode) {
+      if ([502, '502'].includes(errorCode)) {
         this.alertEvent.next();
       }
     }
